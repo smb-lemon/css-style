@@ -40,3 +40,27 @@ Here, <br>
 <head>
     <link rel="stylesheet", href="style.css"> ##href = css file path
 </head>
+```
+## Color Property
+
+**Color property is used to set the color of foreground**<br>
+*Examples*<br>
+```
+color: purple;
+color: #00a400;
+color: rgb(214, 122, 127);
+color: hsl(30deg 82% 43%);
+color: hsla(237deg 74% 33% / 61%);
+color: hwb(152deg 0% 58% / 70%);
+```
+***Background Color Property***<br>
+**Background Color Property is used to set the color of the background**<br>
+*Examples*<br>
+```
+background-color: purple;
+background-color: #00a400;
+background-color: rgb(214, 122, 127);
+background-color: hsl(30deg 82% 43%);
+background-color: hsla(237deg 74% 33% / 61%);
+background-color: hwb(152deg 0% 58% / 70%);
+```
