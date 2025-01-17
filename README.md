@@ -59,8 +59,15 @@ color: hwb(152deg 0% 58% / 70%);
 ```
 background-color: purple;
 background-color: #00a400;
-background-color: rgb(214, 122, 127);
+background-color: rgb(251, 180, 219);
 background-color: hsl(30deg 82% 43%);
 background-color: hsla(237deg 74% 33% / 61%);
 background-color: hwb(152deg 0% 58% / 70%);
 ```
+**RGB TO HEX**<br>
+`color  : #ffffff ` <br>
+##1st ff is Red(R),<br>
+##2nd ff is Green(G), <br>
+##3rd ff is Blue(B)
+- Convert the red, green and blue color values from decimal to hex.
+- Concatenate the 3 hex values of the red, green and blue togather: RRGGBB.
