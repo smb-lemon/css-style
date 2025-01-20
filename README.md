@@ -144,3 +144,105 @@ h1 {
 ```
 <p style = "font-family : fantasy">This text is fantasy's Default font</p>
 
+## Selectors <br>
+**On Importance Basis : *`Id > Class > Element`***<br>
+```
+<div class="greetDiv">
+        <p class="greetPara">
+            Hello world
+        </p>
+    </div>
+```
+```
+div.greetDiv .greetPara{
+    color: aliceblue;
+}
+.greetDiv p.greetPara{
+    color: black;
+}
+.greetDiv .greetPara{
+    color: brown;
+}
+```
+### Specificity Calculation in CSS<br>
+| ID  | Class | Element | Code                        |Total
+|-----|-------|---------|-----------------------------|----|
+| 0   | 2     | 1       | div.greetDiv .greetPara     |0 2 1
+| 0   | 2     | 1       | .greetDiv p.greetPara       |0 2 1
+| 0   | 2     | 0       | .greetDiv .greetPara        |0 2 0
+
+**If the Value is same ,it will follow cascading rule and the last value will be the final value**<br>
+
+**In any html fine, to select any set or group of files or individual element so that we can apply style on them is called Selectors**<br>
+### Universal Selector<br>
+To select everything in a document<br>
+*Example:*<br>
+```
+* {
+    property: value;
+}
+// * is the Universal Selector
+```
+## Element Selector<br>
+It is used to select all the elements of the same type<br>
+*Example:*<br>
+```
+h2 {
+    property: value;
+}
+// h2 is the Element Selector
+```
+## ID Selector<br>
+Id selector is used based on the value of element's id attribute<br>
+*Example:*<br>
+```
+#myId {
+    property: value;
+}
+// myId is the ID Selector
+```
+## Class Selector<br>
+Class selector is used based on the element's class attribute<br>
+*Example:*<br>
+```
+.myClass {
+    property: value;
+}
+// myClass is the Class Selector
+```
+## Descendant Selector<br>
+Descendant selector selects elements of parent element<br>
+*Example:*<br>
+```
+div p {
+    property: value;
+}
+// p is the Descendant Selector
+```
+## Adjacent Sibling Combinator <br>
+**Combinator is basically adding multiple selector together.As the descendant selector works on parent element, this sibling combinator works as sibling element, ex : h3 comes immediately after p tag.Basically they are on the same level**<br>
+*Example:*<br>
+```
+p+h3 {
+    property: value;
+}
+// + is the sibling combinator
+```
+## Child Combinator <br>
+**Child  combinator works as parent and children relation.ex : selects all button which are direct children of span.Child combintor can only go one level up(disadvantage)**<br>
+*Example:*<br>
+```
+span > button {
+    property: value;
+}
+// > is the child combinator
+```
+## Attribute Selector<br>
+**Attribute selector selects elements based on the presence or value of a given attribute**<br>
+*Example:*<br>
+```
+input[attriute=""] {
+    property: value;
+}
+// = is the Attribute Selector
+```

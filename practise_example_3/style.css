@@ -1,0 +1,29 @@
+h1 {
+    color: orange;
+}
+#hi{
+    color: rgb(170, 22, 22);
+}
+.helloClass {
+    color: rgb(22, 13, 124);
+}
+
+div p{
+    background-color: blueviolet;
+}
+.paragraph{
+    background-color: darkcyan;
+}
+p{
+    background-color: deepskyblue;
+}
+
+div.greetDiv .greetPara{
+    color: aliceblue;
+}
+.greetDiv p.greetPara{
+    color: black;
+}
+.greetDiv .greetPara{
+    color: brown;
+}
