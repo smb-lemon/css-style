@@ -170,7 +170,7 @@ Inline| ID  | Class | Element | Code                        |Total
 || 0   | 2     | 1       | div.greetDiv .greetPara     |0 2 1
 || 0   | 2     | 1       | .greetDiv p.greetPara       |0 2 1
 || 0   | 2     | 0       | .greetDiv .greetPara        |0 2 0
-||ID    |Class, attributes & Pseudo class|Element & Sudo-Element|----|----
+|Inline|ID    |Class, attributes & Pseudo class|Element & Sudo-Element|----|----
 |
 
 ### !important<br>
@@ -338,3 +338,91 @@ When we need apply some style to div as parent element, it will apply to all oth
     background-color: inherit;
    }
     ```
+## Box Model <br>
+- **Height**
+    - Height refers as the area of content height.<br>
+    Example : <br> 
+    ```
+   div {
+    height: 100px;
+   }
+    ```
+- **Width**<br>
+    - Width refers as the area of content width.<br>
+    Example : <br> 
+    ```
+   div {
+    width: 300px;
+   }
+    ```
+- **Border**<br>
+    - Use to set element's border<br>
+        - border-width
+        - border-style
+        - border-color<br>
+    - Example : <br> 
+    ```
+   div {
+    border-width: 5px;
+    border-style: solid;
+    border-color: blue;
+   }
+
+   // Border shorthand
+   div {
+    border : 5px solid blue;
+   }
+    ```
+    - **Border Sides** (to control the individual side of the box)<br>
+        - border-left
+        - border-right
+        - border-top
+        - border-bottom<br>
+
+     Example : <br> 
+    ```
+   div {
+    border-top: 5px;
+    border-left-color: red;
+    border-right-style: dashed;
+   }
+
+   // Border Side shorthand
+   div {
+    border-bottom : 5px solid blue;
+   }
+    ```
+    - **Border Radius** (to control the edges of the border)<br>
+
+     Example : <br> 
+    ```
+   div {
+    border-radius: 5px;
+   }
+    ```
+- **Padding**
+    - padding-left
+    - padding-right
+    - padding-top
+    - padding-bottom<br>
+
+     Example : <br> 
+    ```
+   div {
+    padding-left: 5px;
+    padding-right: 5px;
+   }
+    ```
+    - Padding Shorthand
+        - for all sides<br>
+       ` padding: 20px;`<br>
+
+       - top & bottom | left and right<br>
+       `padding: 10px 20px`<br>
+
+       - top | left & right | bottom<br>
+       `padding: 10px 20px 10px;`<br>
+
+       - top | right | bottom | left ***(clockwise)**<br>
+       `padding: 2px 5px 2px 5px;`
+- Margin
