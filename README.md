@@ -165,12 +165,22 @@ div.greetDiv .greetPara{
 }
 ```
 ### Specificity Calculation in CSS<br>
-| ID  | Class | Element | Code                        |Total
-|-----|-------|---------|-----------------------------|----|
-| 0   | 2     | 1       | div.greetDiv .greetPara     |0 2 1
-| 0   | 2     | 1       | .greetDiv p.greetPara       |0 2 1
-| 0   | 2     | 0       | .greetDiv .greetPara        |0 2 0
+Inline| ID  | Class | Element | Code                        |Total
+|-----|-----|-------|---------|-----------------------------|----|
+|| 0   | 2     | 1       | div.greetDiv .greetPara     |0 2 1
+|| 0   | 2     | 1       | .greetDiv p.greetPara       |0 2 1
+|| 0   | 2     | 0       | .greetDiv .greetPara        |0 2 0
+||ID    |Class, attributes & Pseudo class|Element & Sudo-Element|----|----
+|
 
+### !important<br>
+**To show most specific things in document**<br>
+*Example:*<br>
+```
+h2 {
+    property: value; !important
+}
+```
 **If the Value is same ,it will follow cascading rule and the last value will be the final value**<br>
 
 **In any html fine, to select any set or group of files or individual element so that we can apply style on them is called Selectors**<br>
@@ -246,3 +256,85 @@ input[attriute=""] {
 }
 // = is the Attribute Selector
 ```
+## Pseudo Class<br>
+A keyword added to the selector that specifies a special state of the selected elements<br>
+- **hover**
+    - example : <br> 
+    ```
+    button:hover{
+    background-color: black;
+    }
+    ```
+- **active**
+    - example : <br> 
+    ```
+    p:active{
+    font-weight: bold;
+    }
+    ```
+- **checked**
+     - example : <br> 
+    ```
+    input[type="radio"]:checked + label{
+    color: red;
+    font-weight: bold;
+    }
+    ```
+- **nth-of-type**
+     - example : <br> 
+    ```
+   div:nth-of-type(3){
+    background-color: cornflowerblue;
+    }
+    ```
+- **default**
+    - example : <br> 
+    ```
+   input:default {
+  box-shadow: 0 0 2px 1px coral;
+    }
+
+    input:default + label {
+    color: coral;
+    }
+    //checked required
+    ```
+- **disabled**
+    - example : <br> 
+    ```
+   :disabled {
+    background-color: grey;
+   }
+    //disabled required
+    ```
+## Pseudo Element<br>
+A keyword added to the selector which is used to modify specific part of the element <br>
+- **first-letter**
+    - example : <br> 
+    ```
+   h1::first-letter {
+    color: grey;
+   }
+    ```
+- **first-line**
+    - example : <br> 
+    ```
+   h1::first-line {
+    color: blue;
+   }
+    ```
+- **selection**
+    - example : <br> 
+    ```
+   p::selection {
+    background-color: blue;
+   }
+    ```
+## Inheritance<br>
+When we need apply some style to div as parent element, it will apply to all other element in that div(**`button,input`** etc are different).To use the same value in these elements we can use `inherit` value.**`height,width,border`(non-inherit**)<br>
+- example : <br> 
+    ```
+   button {
+    background-color: inherit;
+   }
+    ```

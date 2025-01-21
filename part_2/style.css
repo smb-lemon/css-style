@@ -45,19 +45,51 @@ input[type="password"]{
 input[type]{
     background-color: aliceblue;
 }
+/* hover */
 h3:hover {
     text-decoration: underline;
 }
 button:hover{
     background-color: black;
 }
+/* active */
 p:active{
     font-weight: bold;
 }
+/* checked */
 input[type="radio"]:checked + label{
     color: red;
     font-weight: bold;
 }
+/* nth-of-type */
 div:nth-of-type(3){
     background-color: cornflowerblue;
+}
+input:is(:-webkit-autofill, :autofill) {
+    border: 3px solid darkorange;
+  }
+
+  /* default  */
+input:default {
+    box-shadow: 0 0 2px 1px coral;
+  }
+  
+input:default + label {
+    color: coral;
+  }
+  /* disabled */
+:disabled + label{
+    color: dimgray;
+  }
+  /* first-letter */
+h1::first-letter{
+    color: aquamarine;
+  }
+  /* first-line */
+.paraDetails::first-line{
+    background-color: darkgray;
+  }
+  /* selection */
+.paraDetails::selection{
+    background-color: lemonchiffon;
 }
