@@ -131,9 +131,48 @@ h1 {
 | pc         | *rem        |
 | cm         | ch         |
 | mm         | vh         |
-| in         | vw + many more   |  
+| in         | vw + many more   | 
+| 
 
 ` 1 inch = 96 px`<br>
+### Percentage %<br>
+It is often defined as the size of a relative to an element's parent object <br>
+*Example:*<br>
+```
+h1 {
+    width: 50%;
+}
+```
+### em <br>
+font size of parent, in the case of typographical property like font-size or other property like width, margin <br>
+*Example:*<br>
+```
+#outerDiv {
+    font-size: 20px;
+}
+
+#innerDiv {
+    font-size: 2em;
+    padding: 1em;
+
+// font-size will be 40px as 2em & padding will be 40px as the font size is 40px
+}
+```
+**Drawbacks of em :** Snowball effect in nested elements <br>
+## rem(Root em) <br>
+Font size of the root element <br>
+*Example:*<br>
+```
+section {
+    font-size: 10px;
+}
+
+div {
+    font-size: 2rem; 
+}
+
+//for multiple nested divs, rem will be the root(Section)
+```
 ### Font Family <br>
 **Font family is used to specify one or more family font**<br>
 *Example:*<br>
@@ -157,9 +196,11 @@ h1 {
 div.greetDiv .greetPara{
     color: aliceblue;
 }
+
 .greetDiv p.greetPara{
     color: black;
 }
+
 .greetDiv .greetPara{
     color: brown;
 }
@@ -191,6 +232,7 @@ To select everything in a document<br>
 * {
     property: value;
 }
+
 // * is the Universal Selector
 ```
 ## Element Selector<br>
@@ -200,6 +242,7 @@ It is used to select all the elements of the same type<br>
 h2 {
     property: value;
 }
+
 // h2 is the Element Selector
 ```
 ## ID Selector<br>
@@ -209,6 +252,7 @@ Id selector is used based on the value of element's id attribute<br>
 #myId {
     property: value;
 }
+
 // myId is the ID Selector
 ```
 ## Class Selector<br>
@@ -218,6 +262,7 @@ Class selector is used based on the element's class attribute<br>
 .myClass {
     property: value;
 }
+
 // myClass is the Class Selector
 ```
 ## Descendant Selector<br>
@@ -227,6 +272,7 @@ Descendant selector selects elements of parent element<br>
 div p {
     property: value;
 }
+
 // p is the Descendant Selector
 ```
 ## Adjacent Sibling Combinator <br>
@@ -236,6 +282,7 @@ div p {
 p+h3 {
     property: value;
 }
+
 // + is the sibling combinator
 ```
 ## Child Combinator <br>
@@ -245,6 +292,7 @@ p+h3 {
 span > button {
     property: value;
 }
+
 // > is the child combinator
 ```
 ## Attribute Selector<br>
@@ -254,6 +302,7 @@ span > button {
 input[attriute=""] {
     property: value;
 }
+
 // = is the Attribute Selector
 ```
 ## Pseudo Class<br>
@@ -297,6 +346,7 @@ A keyword added to the selector that specifies a special state of the selected e
     input:default + label {
     color: coral;
     }
+
     //checked required
     ```
 - **disabled**
@@ -305,6 +355,7 @@ A keyword added to the selector that specifies a special state of the selected e
    :disabled {
     background-color: grey;
    }
+
     //disabled required
     ```
 ## Pseudo Element<br>
@@ -332,15 +383,17 @@ A keyword added to the selector which is used to modify specific part of the ele
     ```
 ## Inheritance<br>
 When we need apply some style to div as parent element, it will apply to all other element in that div(**`button,input`** etc are different).To use the same value in these elements we can use `inherit` value.**`height,width,border`(non-inherit**)<br>
-- example : <br> 
-    ```
+
+ Example : <br> 
+```
    button {
     background-color: inherit;
    }
-    ```
+```
 ## Box Model <br>
 - **Height**
     - Height refers as the area of content height.<br>
+
     Example : <br> 
     ```
    div {
@@ -349,6 +402,7 @@ When we need apply some style to div as parent element, it will apply to all oth
     ```
 - **Width**<br>
     - Width refers as the area of content width.<br>
+
     Example : <br> 
     ```
    div {
@@ -360,7 +414,8 @@ When we need apply some style to div as parent element, it will apply to all oth
         - border-width
         - border-style
         - border-color<br>
-    - Example : <br> 
+
+     Example : <br> 
     ```
    div {
     border-width: 5px;
@@ -369,6 +424,7 @@ When we need apply some style to div as parent element, it will apply to all oth
    }
 
    // Border shorthand
+
    div {
     border : 5px solid blue;
    }
@@ -388,6 +444,7 @@ When we need apply some style to div as parent element, it will apply to all oth
    }
 
    // Border Side shorthand
+
    div {
     border-bottom : 5px solid blue;
    }
@@ -425,4 +482,149 @@ When we need apply some style to div as parent element, it will apply to all oth
 
        - top | right | bottom | left ***(clockwise)**<br>
        `padding: 2px 5px 2px 5px;`
-- Margin
+
+- **Margin**<br>
+     **To set spacing in the outside of the border**<br>
+    - margin-left
+    - margin-right
+    - margin-top
+    - margin-bottom <br>
+
+    Example : <br> 
+    ```
+   div {
+    margin-left: 5px;
+    margin-right: 5px;
+   }
+    ```
+    - Margin Shorthand
+        - for all sides<br>
+       ` margin: 20px;`<br>
+
+       - top & bottom | left and right<br>
+       `margin: 10px 20px`<br>
+
+       - top | left & right | bottom<br>
+       `margin: 10px 20px 10px;`<br>
+
+       - top | right | bottom | left ***(clockwise)**<br>
+       `margin: 2px 5px 2px 5px;`<br>
+
+## Inline Vs Block Element<br>
+- Inline Element
+    - Takes up only necessary width
+    - Don't start from new line
+
+- Block Element
+    - Takes up the full width available
+    - Start from new line
+
+## Display<br>
+**It sets whether an element is treated as a block or inline element and the layout used for it's children**<br>
+    Example : <br> 
+```
+   h2 {
+    display: inline;
+   }
+```
+```
+// inline-block behaves like inline but element style is block
+   h2 {
+    display: inline-block;
+   }
+```
+```
+// does not display the element
+   h2 {
+    display: none;
+   }
+```
+## Alpha Channel <br>
+It is used to show the opacity of colors <br>
+ Example : <br> 
+```
+   div {
+    background-color: rgba(255,0,0,0.5)
+   }
+
+   // a range from 0 - 1;
+```
+## Opacity <br>
+It is used to show the opacity of element <br>
+ Example : <br> 
+```
+   div {
+    opacity: 1;
+   }
+
+   // opacity range from 0 - 1;
+```
+## Transition <br>
+Transition enables us to define the transition between two states of an element  <br>
+ Example : <br> 
+```
+   div {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    transition-duration: 2s;
+   }
+
+   div:hover {
+    background-color: blue;
+   }
+```
+**Shorthand Method**<br>
+property name | duration | timing-function | delay <br>
+`transition: margin-top 2s ease-in-out 0.2s`<br>
+
+## Transform CSS <br>
+Transform property lets us rotate, skew, scale or translate an element <br>
+- rotate <br>
+
+Example : <br> 
+```
+   div {
+    transform: rotate(45deg);
+   }
+``` 
+- scale <br>
+
+Example : <br> 
+```
+   div {
+    transform: scale(2);
+   }
+
+   //div size will be double
+```
+- translate <br>
+
+Example : <br> 
+```
+   div {
+    transform: translate(20px, 30px);
+   }
+
+   //20px is the movement frim x-axis, 30px is the y-axis movement
+```
+- skew <br>
+
+Example : <br> 
+```
+   div {
+    transform: skew(30deg);
+   }
+
+   //div will resize in tilt shape
+```
+## Box Shadow <br>
+It adds shadows effect around an element's frame <br>
+**box-shadow**<br>
+
+**`box-shadow: 2px 2px 10px red;`** <br>
+
+   - 2px is along x-axis
+   - 2px is along y-axis
+   - 10px is blur radius
+   - red is the color 

@@ -7,9 +7,27 @@ div {
     border-color: bisque;
     border-bottom: 2px;
     border-radius: 10px;
+    margin: 25px;
 }
 
 /* border shorthand */
 h1{
     border: 2px green solid;
+    
+}
+#outer {
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    font-size: 20px;
+}
+#inner {
+    height: 100px;
+    width: 100px;
+    background-color: blueviolet;
+    font-size: 0.5em;
+}
+#last {
+    height: 100px;
+    width: 100px;
 }
