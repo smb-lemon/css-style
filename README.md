@@ -690,3 +690,190 @@ Position is used in CSS to set an element how is this positioning in the documen
    }
    //the element will be fixed in the document.It will position in same as absolute value but it will move along with the document scrolling.
 ```
+## Flexbox <br>
+Flexible box layout. It is a one-dimensional layout method for arranging items in raws or columns<br>
+### Flexbox Model <br>
+flexbox model is basically directional based.If it's direction is row-based(---),
+the `main axis` will be row type and the `cross axis` will be column side.If the direction is column-based(|), the main axis will be column-based .
+and cross axis will be row side.<br>
+
+### Flex Direction <br>
+It sets how flex items are placed in the flex container, along which axis and direction <br>
+- `flexbox-direction: row;` // main axis , left to right
+- `flexbox-direction: row-reverse;` // main axis, right to left
+- `flexbox-direction: column;` // main axis , top to bottom
+- `flexbox-direction: column-reverse;` // main axis, bottom to top <br>
+
+Example : <br> 
+```
+   div {
+    display: flex;
+    flex-direction: row; // main axis will be directed as row side
+    flex-direction: column; // main axis will be column wise
+   }
+```
+### Justify Content <br>
+Tells the browser about distributing space between and around content items along main axis <br>
+- `justify-content: flex-start;` // placed elements at the top of main axis 
+- `justify-content: flex-end;` // placed at the bottom of the main axis
+- `justify-content: center;` // center the elements in main axis
+
+Example : <br> 
+```
+   div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    // main axis is left to right, so elements will be placed bottom of the main axis
+   }
+```
+### Flex Wrap <br>
+Sets whether flex items are forced onto one line or can wrap onto multiple line .The `flex-wrap` property specifies whether the flexible items should wrap or not.<br>
+- `flex-wrap: nowrap;` // default wrap state, no changes as it tries to fit in one line
+- `flex-wrap: wrap;` // the element value of width or height will be applicable, could be into multiple lines 
+- `flex-wrap: wrap-reverse;` // cross axis reverse
+
+Example : <br> 
+```
+   div {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+   }
+
+   //it will try to fit all elements of div with the same height and width
+```
+### Align Item <br>
+Distribute our items along cross axis <br>
+- `align-items: flex-start;` // cross axis top
+- `align-items: flex-end;` // cross axis bottom
+- `align-items: center;` // center the elements in cross axis
+- `align-items: baseline;` // any type of content in element moves to same baseline
+
+Example : <br> 
+```
+   div {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-end;
+   }
+```
+### Align Content <br>
+It sets the distribution of space between and around content items along a flexbox cross axis.Align-items defines how the browser distributes space between and around items vertically. Think of it as justify-content but for the vertical axis <br>
+- `align-content: flex-start;` // The items are packed flush to each other against the edge of the alignment container depending on the flex container's cross-start side. This only applies to flex layout items. For items that are not children of a flex container
+- `align-content: flex-end;` // The items are packed flush to each other against the edge of the alignment container depending on the flex container's cross-end side. This only applies to flex layout items. For items that are not children of a flex container, this value is treated like end
+- `align-content: center;` // content will move to center along cross axis
+- `align-content: space-around;` // add spaces to content from top, bottom and middle along cross axis
+- `align-content: space-evenly;` //add spaces evenly
+
+Example : <br> 
+```
+   div {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+   }
+```
+### Align Self <br>
+Distribute an item along cross axis . **Specificity** : `align-self > align-items`<br>
+- `align-self: flex-start;` // cross axis top for individual item
+- `align-self: flex-end;` // cross axis bottom for individual item
+- `align-self: center;` // center the element in cross axis
+- `align-self: baseline;` // any type of content in a element moves to same baseline
+
+Example : <br> 
+```
+   div {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-item: flex-start;
+   }
+   .classDiv {
+    align-self: flex-end;
+   }
+
+   // align-self value will be counted for that individual div
+```
+### Flex Sizing
+Flex sizing is used to resize the flex <br>
+- `flex-basis;` // It sets the initial size of a flex item
+Example : <br> 
+```
+   div {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-item: flex-start;
+   }
+   .classDiv {
+    flex-basis: 200px;
+   }
+
+   // flex basis will be 200px width for that individual div
+```
+### Flex Grow
+
+It specifies how much the of the flex container's remaining space should be assigned to the flex item's main size <br>
+
+Example: <br>
+```
+    div {
+        flex-grow: 1; //occupy total width or height of the div
+    }
+```
+### Flex Shrink <br>
+Flex shrink is used when elements overflow from the div. it sets the flex shrink factor of a flex item. <br>
+ Example: <br>
+```
+    div {
+        flex-shrink: 2; //shrink double width or height of element from other elements on the div
+    }
+```
+### Flex Shorthand <br>
+- `flex-grow` | `flex-shrink` | `flex-basis` <br>
+**`flex: 2 2 50px;`** <br>
+
+- `flex-grow` | `flex-basis` <br>
+**`flex: 2 50px;`** <br>
+
+- `flex-grow(unitless)` <br>
+**`flex: 2;`** <br>
+
+- `flex-basis` <br>
+**`flex: 50px;`**<br>
+
+## CSS Grid
+
+Setting a container's display to grid will make all the children grid items <br>
+Example : <br>
+```
+container{
+    display: grid;
+}
+```
+### Grid Template <br>
+They define the line and tracks sizing of grid <br>
+Example : <br>
+```
+div {
+    grid-template-rows: 50px 50px 50px;
+    grid-template-columns:100px 100px 100px;
+}
+```
