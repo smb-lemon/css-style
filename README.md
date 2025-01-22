@@ -627,4 +627,66 @@ It adds shadows effect around an element's frame <br>
    - 2px is along x-axis
    - 2px is along y-axis
    - 10px is blur radius
-   - red is the color 
+   - red is the color <br>
+## Background Image <br>
+It lets us set image as a background <br>
+Example : <br> 
+```
+   div {
+    background-image: url(""); //location of the image
+    backgroud-size: contain; //contain takes same image size as original
+                            // cover takes crop size of the image
+                            // auto takes stretch size of the image
+   }
+
+```
+## Position <br>
+Position is used in CSS to set an element how is this positioning in the document. `top`, `right`, `bottom`, `left` determine the final location of the element <br>
+- static
+    - the `top,right,left,bottom` and `z-index` properties have no effect.This is use as a default value <br>
+
+    Example : <br> 
+```
+   div {
+    position: static;
+   }
+
+   // the position will be static and no top, bottom etc value will apply on this div
+```
+- relative
+    - the position is related to offset itself based on the top, bottom, left, right <br>
+
+    Example : <br> 
+```
+   div {
+    position: relative;
+    top: 100px;
+    left: 100px;
+   }
+
+   // the position will be on the right side of that element position due to the position set left=100px and bottom side of that element position due to top=100px.There will be empty space for the moved div also.
+```
+- absolute
+    - the element is removed from the normal document flow, and no space has been created for the element in the page layout.It is positioned relative to it's closest positioned ancestor, if any; otherwise it is placed relative to initial containing block.<br> 
+
+    Example : <br> 
+```
+   div {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+   }
+    // the position will be counting from the document body if no position applied on parent element.So it will move 100px from top of the document and move 100px from left side of the document.There will be no empty space for absolute position
+   
+```
+- fixed
+    - the element is removed from the normal document flow.No space is created for the element in the page layout. It is positioned relative to the initial containing block established by the viewpoint.<br>
+    Example : <br> 
+```
+   div {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+   }
+   //the element will be fixed in the document.It will position in same as absolute value but it will move along with the document scrolling.
+```
