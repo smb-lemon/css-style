@@ -861,12 +861,13 @@ Flex shrink is used when elements overflow from the div. it sets the flex shrink
 
 ## CSS Grid
 
-Setting a container's display to grid will make all the children grid items <br>
+Setting a container's display to grid will make all the children grid items.Works like a block element or container <br>
 Example : <br>
 ```
 container{
-    display: grid;
+    display: inline-grid;
 }
+// inline-grid value works like inline
 ```
 ### Grid Template <br>
 They define the line and tracks sizing of grid <br>
@@ -876,4 +877,93 @@ div {
     grid-template-rows: 50px 50px 50px;
     grid-template-columns:100px 100px 100px;
 }
+```
+**Repeat**<br>
+Repeat is divided into all available spaces <br>
+- `grid-template-rows: repeat(3, 1fr);` //1 fraction of 100% width available spaces, count = 3;
+- `grid-template-rows: 1fr 1fr 1fr;` // alternative approach
+- `grid-template-column: repeat(3, 1fr);` //1 fraction of 100% height available spaces
+- `grid-template-column: 1fr 1fr 1fr;` // alternative approach
+
+### Grid Gaps <br>
+Define the gaps between lines <br>
+- `row-gap: 10px;`
+- `column-gap: 10px;`
+- `grid-gap: rowGap columnGap;` // for single value, both rowGap and columnGap will be same
+
+### Grid Column <br>
+Define an item's starting position and ending position inside the column <br>
+- `grid-column-start: line_number;` // the value will be occupied for the whole horizontal line till end value
+- `grid-column-end: line_number;` // end value
+- `grid-column: startColumn / endColumn;` //defining both starting and ending for the shorthand technique
+- `grid-column: startColumn / span number;`// span means how many column we need after starting
+
+### Grid Rows <br>
+Define an item's starting position and ending position inside the row <br>
+- `grid-row-start: line_number;` // the value will be occupied for the whole vertical line till end value
+- `grid-row-end: line_number;` // end value
+- `grid-row: startRow / endRow;` //defining both starting and ending for the shorthand technique
+- `grid-row: startRow / span number;`// span means how many row we need after starting
+
+Example : <br>
+```
+#div {
+    grid-column: 1 / 3; // 1 = startColumn, 3 = endColumn
+    grid-row: 1 / span 3; 1 = startRow , span = 3(occupies 3 row);
+}
+```
+### Grid Properties <br>
+- Horizontal
+    - `justify-items;` // for multiple items(container)
+        - `justify-items: center;`
+        - `justify-items: start;`
+        - `justify-items: end;`
+ 
+    - `justify-self;` // single item (item)
+
+- Vertical
+    - `align-items;` // for multiple items (container)
+    - `align-self;` // for single item (item)
+- Both Direction
+    - `place-items;`
+    - `place-self;`
+   
+    Example :<br>
+    ```
+    .container {
+        place-items: center; // if both justify-item and align-items are same
+    } 
+
+    #item {
+        place-self: start; // if both jusify-self and align-self are same
+    }
+    ```
+## CSS Animation 
+
+To animate CSS element <br>
+Example : <br>
+```
+    @keyframes myAnimation {
+        from {font-size: 20px;}
+        to {font-size: 40px;}
+    }
+    
+    //alternative
+    @keyframes myAnimation {
+        0% {font-size: 20px;}
+        50% {font-size: 30px;}
+        100% {font-size: 30px;}
+    }
+
+    div {
+        animation-name: fontAnimation;
+        animation-duration: 3s;
+        animation-timing-function: ease-in;
+        animation-delay: 0;
+        animation-iteration-count: 2;
+        animation-direction: normal;
+
+        /*Shorthand */
+        animation: fontAnimation 3s ease-in 0s 2 normal;
+    }
 ```
