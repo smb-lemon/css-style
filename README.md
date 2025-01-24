@@ -967,3 +967,14 @@ Example : <br>
         animation: fontAnimation 3s ease-in 0s 2 normal;
     }
 ```
+## Media Queries
+Help to create a responsive website <br>
+Media features - width (of viewpoint) <br>
+Example : <br>
+```
+@media(width: 400px){
+div {
+   background-color: red;
+    }
+}
+```

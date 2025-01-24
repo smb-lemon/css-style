@@ -53,3 +53,9 @@
         font-size: 40px;
     }
 }
+
+@media(width: 400px) {
+    #fontAnimation {
+        background-color: blue;
+    }
+}
