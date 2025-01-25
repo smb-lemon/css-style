@@ -978,3 +978,18 @@ div {
     }
 }
 ```
+## Z- Index 
+It decides the stack level of elements. Overlapping elements with a larger z-index cover  those with a smaller one. position should not be static or default. <br>
+Example : <br>
+```
+div1 {
+    position: relative;
+    z-index: auto(0); //default value
+    z-index: 1; // if the value is higher than other z-index, it will show in front
+    }
+
+div2 {
+    position: relative;
+    z-index: -1; //if the value is lower than other z-index, it will stay behind the other element
+}
+```
