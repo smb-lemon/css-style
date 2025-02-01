@@ -1,0 +1,62 @@
+/* .adoptme {
+    color: burlywood;
+}
+.pet {
+    color: rgb(135, 90, 32);
+}
+.card {
+    height: 500px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 50px;
+}
+#pets {
+    height: 500px;
+    width: 800px;
+    display: flex;
+    font-size: 15px;
+
+}
+img {
+    height: 150px;
+    width: 200px;
+    align-items:center;
+} */
+
+.card {
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 25px;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  img {
+    width: 100%;
+    border-radius: 25px;
+  }
+  
+  h2 {
+    color: #d56f3e;
+  }
+  
+  span {
+    color: #9d6f24;
+  }
+  
+  h4 {
+    text-align: right;
+    color: #3c787e;
+  }
+  
+  #pets {
+    display: flex;
+    justify-content: space-evenly;
+  }
+/* media queries */
+  @media (max-width: 375px) {
+    #pets {
+        flex-wrap: wrap;
+    }
+  }
